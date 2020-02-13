@@ -9,12 +9,13 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApp1
 {
-	class ForecastResult
+	public class ForecastResult
 	{
 		private List<TradeDeal> tradeDeals = new List<TradeDeal>();
 		private List<double> profit = new List<double>();
 		private double curProfit = 0.0;
 
+		public double CurProfit { get => curProfit; set => curProfit = value; }
 
 		public void add_trade_deal(TradeDeal tradeDeal)
 		{

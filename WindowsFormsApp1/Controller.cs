@@ -23,6 +23,16 @@ namespace WindowsFormsApp1
 		{
 			init_strategies();
 			init_instruments();
+
+			//FinancialInstrument instr = get_instrument("SPFB.Si_090101_091231.txt");
+			//TradingStrategy strategy = get_strategy("Test5").Originator;
+
+			//ForecastingModule forecastingModule = new ForecastingModule(strategy, instr);
+			//ForecastResult result = forecastingModule.run();
+			//double profitExepted = -3419;
+
+			//double a = result.CurProfit;
+
 		}
 	
 

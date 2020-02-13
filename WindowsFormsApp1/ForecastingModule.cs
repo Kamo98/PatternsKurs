@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-	class ForecastingModule
+	public class ForecastingModule
 	{
 		private TradingStrategy strategy;
 		private FinancialInstrument instrument;

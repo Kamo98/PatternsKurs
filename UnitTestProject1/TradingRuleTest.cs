@@ -21,7 +21,7 @@ namespace UnitTestProject1
 
 		[TestMethod]
 		//Тест проверяет правильно ли срабатывает TradingRule
-		public void test_method_check_1()
+		public void test_TradingRule()
 		{
 			//Входные данные
 

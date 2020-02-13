@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-	enum TypeDeal
+	public enum TypeDeal
 	{
 		Buy,
 		Sell
 	}
-	class TradeDeal
+	public class TradeDeal
 	{
 		private TypeDeal type;
 		private DateTime dateTimeOpen;

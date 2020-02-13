@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MemontoTests.cs" />
     <Compile Include="TradingRuleTest.cs" />
+    <Compile Include="ForecastModuleTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
