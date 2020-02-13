@@ -154,5 +154,24 @@ namespace WindowsFormsApp1
 			return new Condition(indexOfInterval1, indexOfInterval2, parameter1, parameter2, indicator1,
 				indicator2, const1, const2, predicate);
 		}
+
+		public override bool Equals(object other)
+		{
+			Condition o = (Condition)other;
+			return indexOfInterval1 == o.indexOfInterval1 &&
+				indexOfInterval2 == o.indexOfInterval2 &&
+				o.indicator1 == indicator1 &&
+				o.indicator2 == indicator2 &&
+				o.parameter1 == parameter1 &&
+				o.parameter2 == parameter2 &&
+				o.predicate == predicate &&
+				o.const1 == const1 &&
+				o.const2 == const2;
+		}
+
+		public override int GetHashCode()
+		{
+			return indexOfInterval1 ^ indexOfInterval2 ^ (int)parameter1 ^ (int)parameter2;
+		}
 	}
 }

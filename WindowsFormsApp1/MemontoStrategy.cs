@@ -27,5 +27,30 @@ namespace WindowsFormsApp1
 		public DateTime DateOfCreation { get => dateOfCreation; }
 		public DateTime DateOfChange { get => dateOfChange; }
 		public List<TradingRule> Rules { get => rules; }
+
+		public override bool Equals (object other)
+		{
+			MemontoStrategy o = (MemontoStrategy)other;
+			bool eqealsRules = rules.ToArray().Equals(o.rules.ToArray());
+			return name == o.name && dateOfChange == o.dateOfChange
+				&& dateOfCreation == o.dateOfCreation &&
+				eqealsRules;
+		}
+
+		public bool Equals(MemontoStrategy o)
+		{
+			bool eqealsRules = rules.Count == o.rules.Count;
+			if (!eqealsRules)
+				return false;
+			for (int i = 0; i < rules.Count; i++)
+				eqealsRules &= rules[i].Equals(o.rules[i]);
+			return name == o.name && dateOfChange == o.dateOfChange
+				&& dateOfCreation == o.dateOfCreation &&
+				eqealsRules;
+		}
+		public override int GetHashCode()
+		{
+			return name.GetHashCode() ^ rules.GetHashCode();
+		}
 	}
 }

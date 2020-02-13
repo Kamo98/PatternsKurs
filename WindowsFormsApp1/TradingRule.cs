@@ -60,5 +60,22 @@ namespace WindowsFormsApp1
 				res &= cond.check(curIndex, instr);
 			return res;
 		}
+
+		public override bool Equals(object other)
+		{
+			TradingRule o = (TradingRule)other;
+			bool eqealsCond = conditions.Count == o.conditions.Count;
+			if (!eqealsCond)
+				return false;
+			for (int i = 0; i < conditions.Count; i++)
+				eqealsCond &= conditions[i].Equals(o.conditions[i]);
+			return signal == o.signal &&
+				eqealsCond;
+		}
+
+		public override int GetHashCode()
+		{
+			return signal.GetHashCode() ^ conditions.GetHashCode();
+		}
 	}
 }
