@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WindowsFormsApp1;
 
@@ -28,8 +31,8 @@ namespace UnitTestProject1
 			//Создать 2 условия
 			int index1 = 0, index2 = 0;
 			int curIndex = 60;
-			ParameterCondition par1 = ParameterCondition.PriceClose;
-			ParameterCondition par2 = ParameterCondition.PriceOpen;
+			ParameterCondition par1 = ParameterCondition.PriceMax;
+			ParameterCondition par2 = ParameterCondition.PriceMin;
 			Predicate predicate = Predicate.Less;
 
 			Condition cond = new Condition(index1, index2, par1, par2, null, null, 0.0, 0.0, predicate);
@@ -39,7 +42,7 @@ namespace UnitTestProject1
 			ParameterCondition par2_ = ParameterCondition.Indicator;
 			Predicate predicate_ = Predicate.MoreEqual;
 			Indicator ind1 = new SMA(14);
-			Indicator ind2 = new SMA(28);
+			Indicator ind2 = new MACD(28);
 
 			Condition cond2 = new Condition(index1_, index2_, par1_, par2_, ind1, ind2, 0.0, 0.0, predicate_);
 
@@ -53,7 +56,7 @@ namespace UnitTestProject1
 
 
 			//Создать правило
-			TradingRule rule = new TradingRule();
+			TradingRule rule = new TradingRule(Signal.Buy);
 			rule.add_condition(cond);
 			rule.add_condition(cond2);
 

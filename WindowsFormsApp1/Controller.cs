@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,14 +27,6 @@ namespace WindowsFormsApp1
 			init_strategies();
 			init_instruments();
 
-			//FinancialInstrument instr = get_instrument("SPFB.Si_090101_091231.txt");
-			//TradingStrategy strategy = get_strategy("Test5").Originator;
-
-			//ForecastingModule forecastingModule = new ForecastingModule(strategy, instr);
-			//ForecastResult result = forecastingModule.run();
-			//double profitExepted = -3419;
-
-			//double a = result.CurProfit;
 
 		}
 	

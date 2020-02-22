@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WindowsFormsApp1;
 
@@ -24,16 +27,16 @@ namespace UnitTestProject1
 		{
 			//Входные данные
 
-			int index1 = 0, index2 = 0;
+			int index1 = 0, index2 = 2;
 			int curIndex = 60;
-			ParameterCondition par1 = ParameterCondition.PriceClose;
-			ParameterCondition par2 = ParameterCondition.PriceOpen;
+			ParameterCondition par1 = ParameterCondition.Volume;
+			ParameterCondition par2 = ParameterCondition.Volume;
 			Predicate predicate = Predicate.Less;
 
 			Condition cond = new Condition(index1, index2, par1, par2, null, null, 0.0, 0.0, predicate);
 
-			bool expected = instrument.get_interval(curIndex, index1).ClosingPrice <
-				instrument.get_interval(curIndex, index1).OpeningPrice;
+			bool expected = instrument.get_interval(curIndex, index1).Volume <
+				instrument.get_interval(curIndex, index1).Volume;
 
 			Assert.AreEqual(expected, cond.check(curIndex, instrument));
 		}
@@ -47,6 +50,7 @@ namespace UnitTestProject1
 
 			int index1 = 2, index2 = 1;
 			ParameterCondition par1 = ParameterCondition.PriceClose;
+
 			ParameterCondition par2 = ParameterCondition.PriceOpen;
 			Predicate predicate = Predicate.Less;
 

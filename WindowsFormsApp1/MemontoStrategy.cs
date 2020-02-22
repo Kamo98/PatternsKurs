@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,10 +34,18 @@ namespace WindowsFormsApp1
 		public override bool Equals (object other)
 		{
 			MemontoStrategy o = (MemontoStrategy)other;
-			bool eqealsRules = rules.ToArray().Equals(o.rules.ToArray());
+			bool eqealsRules = rules.Count == o.rules.Count;
+			if (!eqealsRules)
+				return false;
+			for (int i = 0; i < rules.Count; i++)
+				eqealsRules &= rules[i].Equals(o.rules[i]);
 			return name == o.name && dateOfChange == o.dateOfChange
 				&& dateOfCreation == o.dateOfCreation &&
 				eqealsRules;
+			//bool eqealsRules = rules.ToArray().Equals(o.rules.ToArray());
+			//return name == o.name && dateOfChange == o.dateOfChange
+			//	&& dateOfCreation == o.dateOfCreation &&
+			//	eqealsRules;
 		}
 
 		public bool Equals(MemontoStrategy o)

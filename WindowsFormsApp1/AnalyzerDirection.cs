@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +10,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApp1
 {
-	class AnalyzerDirection : AnalyzerStrategy
+	public class AnalyzerDirection : AnalyzerStrategy
 	{
 		private List<int> result = new List<int>();		//Сколько интервалов цена шла в нужную сторону
 		private int curDirection = 0;

@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin" <"H:\Университет\8 сем - FINISH!!!\Верификация\WindowsFormsApp1\WindowsFormsApp1.sln"> /t:Rebuild /p:VisualStudioversion=14.0;Configuration=Release;Platform="Any CPU"

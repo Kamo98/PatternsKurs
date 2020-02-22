@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,8 +24,7 @@ namespace WindowsFormsApp1
 		private bool opening = true;
 
 		public bool Opening { get => opening; }
-		internal TypeDeal Type { get => type; }
-		internal TypeDeal Type1 { get => type; }
+		public TypeDeal Type { get => type; }
 		public DateTime DateTimeOpen { get => dateTimeOpen;}
 		public DateTime DateTimeClose { get => dateTimeClose;  }
 		public double OpeningPrice { get => openingPrice;  }
